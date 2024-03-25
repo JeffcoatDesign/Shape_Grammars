@@ -27,6 +27,7 @@ public class Builder : MonoBehaviour
             RenderStory(story, wing, wingFolder);
         }
         RenderRoof(wing, wingFolder);
+        wingFolder.position = new (0f + wing.WingNumber * 10f * wing.Bounds.size.x, 0, 0);
     }
 
 

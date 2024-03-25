@@ -19,3 +19,5 @@ MonoBehaviour:
   storyStrategy: {fileID: 0}
   wingsStrategy: {fileID: 0}
   wingStrategy: {fileID: 0}
+  numberOfStories: 2
+  numberOfWings: 3

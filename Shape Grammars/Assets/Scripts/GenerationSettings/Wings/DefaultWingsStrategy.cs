@@ -6,11 +6,13 @@ public class DefaultWingsStrategy : WingsStrategy
 {
     public override Wing[] GenerateWings(BuildingSettings settings)
     {
+        Wing[] wings = new Wing[settings.numberOfWings];
         RectInt bounds = new RectInt(0, 0, settings.Size.x, settings.Size.y);
-        int height = 1;
-        return new Wing[]
-            {
-                settings.wingStrategy != null ? settings.wingStrategy.GenerateWing(settings,bounds, height) : CreateInstance<DefaultWingStrategy>().GenerateWing(settings,bounds,height)
-            };
+        int height = settings.numberOfStories;
+        for (int i = 0; i < settings.numberOfWings; i++)
+        {
+            wings[i] = settings.wingStrategy != null ? settings.wingStrategy.GenerateWing(settings, bounds, height, i) : CreateInstance<DefaultWingStrategy>().GenerateWing(settings, bounds, height, i);
+        }
+        return wings;
     }
 }

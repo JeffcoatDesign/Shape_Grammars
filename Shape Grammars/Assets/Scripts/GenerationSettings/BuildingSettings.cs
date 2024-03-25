@@ -13,4 +13,14 @@ public class BuildingSettings : ScriptableObject
     public WingsStrategy wingsStrategy;
     public WingStrategy wingStrategy;
     public Vector2Int Size { get { return buildingSize; } }
+    public int numberOfStories = 1;
+    public int numberOfWings = 1;
+    public void SetWidth (int width)
+    {
+        buildingSize.x = width;
+    }
+    public void SetLength (int length)
+    {
+        buildingSize.y = length;
+    }
 }
